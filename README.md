@@ -58,3 +58,27 @@ Node Hero
 - [`dependencies` vs `devDependencies`](http://stackoverflow.com/questions/19339227/bower-and-devdependencies-vs-dependencies)
 - [Taobao NPM](http://npm.taobao.org/)
 - [Semantic version: Major.Mionor.Patch](http://semver.org/)
+
+## Async Programming in Node.js
+
+> Asynchronous I/O is a form of input/output processing that permits other
+processing to continue before the transmission has finished.
+
+1. Read file sync: `fs.readFileSync('file.md', 'utf-8')`
+2. Using error-first callbacks: pass a function to another function as a parameter, you can call it within the function when you are
+finished with your job. (**no return value**)
+    - **error-handing:** instead of a `try-catch` block you have to check for errors in the callback
+    - **no return value:** async functions don't return values, but values will be passed to the callbacks
+3. Meet the [event loop](), which is the heart of Node.js/JavaScript - if is responsible for scheduling asynchronous operations.
+4. Async control flow, which is a way to organize your codes.
+    - Opt 1: [async.js](https://github.com/caolan/async)
+    - Opt 2: Promises - the Promise object is used for deferred and asynchronous computations.
+        A Promise represents an operation that hasn't completed yet but is expected in the future.
+    - See Promise codes in `src/ch3/file-async-promise.js`
+
+### Readings
+
+- [Understanding Async Programming in Node.js](https://blog.risingstack.com/node-hero-async-programming-in-node-js/)
+- [Sync vs Async](http://www.infoq.com/cn/articles/nodejs-asynchronous-io/)
+- [Higher-order functions](https://blog.risingstack.com/functional-ui-and-components-as-higher-order-functions/)
+

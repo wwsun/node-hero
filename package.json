@@ -1,0 +1,23 @@
+{
+  "name": "node-hero",
+  "version": "0.3.0",
+  "description": "node.js learning course",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wwsun/node-hero.git"
+  },
+  "keywords": [
+    "node.js",
+    "npm"
+  ],
+  "author": "Weiwei SUN",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/wwsun/node-hero/issues"
+  },
+  "homepage": "https://github.com/wwsun/node-hero#readme"
+}
