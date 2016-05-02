@@ -19,5 +19,9 @@
   "bugs": {
     "url": "https://github.com/wwsun/node-hero/issues"
   },
-  "homepage": "https://github.com/wwsun/node-hero#readme"
+  "homepage": "https://github.com/wwsun/node-hero#readme",
+  "dependencies": {
+    "express": "^4.13.4",
+    "express-handlebars": "^3.0.0"
+  }
 }

@@ -82,3 +82,29 @@ finished with your job. (**no return value**)
 - [Sync vs Async](http://www.infoq.com/cn/articles/nodejs-asynchronous-io/)
 - [Higher-order functions](https://blog.risingstack.com/functional-ui-and-components-as-higher-order-functions/)
 
+## Simple Node.js Server
+
+1. Getting to know `http` and `https` module, see [docs](https://nodejs.org/dist/latest-v4.x/docs/api/http.html)
+2. Writing a simple server: `src/ch4/server.js`
+3. The `http` module is very low-level, there are a lot of advanced frameworks to pick:
+    - [express](http://expressjs.com/)
+    - [hapi](http://hapijs.com/)
+    - [koa](http://koajs.com/)
+    - [restify](http://restify.com/)
+4. Getting started with Express: `src/ch4/express-server.js`
+    - By default, Express gives you a router. see [API docs](http://expressjs.com/en/4x/api.html)
+    - Express app routing: `app.get`, `app.post`, `app.put`
+5. Getting to know middlewares (as Unix pipelines, but for HTTP requests):
+    - Define Express middleware: `app.use((req, res, next) => { do something })`
+    - Error handling in Express: using a special middleware function
+        - it should be the last middleware added with `app.use`
+6. Rendering HTML:
+    - using [handlebars](https://blog.risingstack.com/your-first-node-js-http-server/handlebarsjs.com) package with the [express-handlebars](https://www.npmjs.com/package/express-handlebars) wrapper.
+    - checking [express-handlebars docs](https://www.npmjs.com/package/express-handlebars)
+7. Debugging Express:
+    - Pass the environment variable to Express: `DEBUG=express*`, like `$ DEBUG=express* node index.js`
+
+### Reading
+
+- [Creat a simple HTTP server](https://blog.risingstack.com/your-first-node-js-http-server/)
+- [Middlewares]()
