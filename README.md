@@ -108,3 +108,28 @@ finished with your job. (**no return value**)
 
 - [Creat a simple HTTP server](https://blog.risingstack.com/your-first-node-js-http-server/)
 - [Middlewares]()
+
+## Node.js Database
+
+1. Storing data in a global variable - in memory for the lifetime of your app.
+    - RAM is expensive
+    - when app restart, all data will lost
+    - stack overflow
+2. Storing data in a file
+    - hard to updating or deleting
+    - hard in parallel
+    - hard to scale up your app
+3. SQL - relational databases
+4. NoSQL - Not only SQL
+5. Node.js and MongoDB
+6. Node.js and PostgrelSQL
+    - [Setup a PostgrelSQL database server](http://www.techrepublic.com/blog/diy-it-guy/diy-a-postgresql-database-server-setup-anyone-can-handle/)
+    - Database browser tool: psql, [cheat sheet](http://www.postgresonline.com/downloads/special_feature/postgresql83_psql_cheatsheet.pdf)
+    - GUI tool for PostgreSQL administration: [pgAdmin](http://www.pgadmin.org/)
+    - [Online course for PostgreSQL](https://www.pluralsight.com/courses/postgresql-getting-started)
+
+### Reading
+
+- [Node.js Databases Tutorial](https://blog.risingstack.com/node-js-database-tutorial/)
+- [SQL Injection attacks]()
+- [Node.js Application Security checklist](https://blog.risingstack.com/node-js-security-checklist)
