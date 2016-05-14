@@ -131,7 +131,7 @@ finished with your job. (**no return value**)
 ### Reading
 
 - [Node.js Databases Tutorial](https://blog.risingstack.com/node-js-database-tutorial/)
-- [SQL Injection attacks]()
+- [SQL Injection attacks](https://www.wikiwand.com/en/SQL_injection)
 - [Node.js Application Security checklist](https://blog.risingstack.com/node-js-security-checklist)
 
 ## Node.js Request Module
@@ -162,3 +162,101 @@ finished with your job. (**no return value**)
     - Fetch API: [isomorphic-fetch](https://www.npmjs.com/package/isomorphic-fetch)
     - [request-promise](https://www.npmjs.com/package/request-promise) is another option.
     - Error handling: error-first callback, or `catch` in promise way
+
+### Reading
+
+- [Node.js Request Module Tutorial](https://blog.risingstack.com/node-hero-node-js-project-structure-tutorial/)
+
+## Node.js Project Structure
+
+Here are some suggestions from [RisingStack](https://risingstack.com/):
+
+1. Organize your files around features, not roles. The problem is:
+    - To understand how the product pages work, you have to open up three different directories, with lots of context switching,
+    - you end up writing long paths when requiring modules: `require('../../controllersuser.js')`
+
+    ```
+    // DON'T
+    .
+    ├── controllers
+    |   ├── product.js
+    |   └── user.js
+    ├── models
+    |   ├── product.js
+    |   └── user.js
+    ├── views
+    |   ├── product.hbs
+    |   └── user.hbs
+    
+    // Good
+    .
+    ├── product
+    |   ├── index.js
+    |   ├── product.js
+    |   └── product.hbs
+    ├── user
+    |   ├── index.js
+    |   ├── user.js
+    |   └── user.hbs    
+    ```    
+
+2.  Don't put logic in `index.js` files
+    - Use these `index.js` files only to export functionlity, like
+    
+    ```node
+    // product/index.js
+    var product = require('./product')
+
+    module.exports = {  
+        create: product.create
+    }
+    ```
+
+3. Place your test files next to the implementation
+    - Using tests to checking whether a module produces the expected output
+    - Also using tests to document your modules
+    - Put your additional test files to a separate `test` folder to avoid confusion
+    
+    ```
+    .
+    ├── test
+    |   └── setup.spec.js
+    ├── product
+    |   ├── index.js
+    |   ├── product.js
+    |   ├── product.spec.js
+    |   └── product.hbs
+    ├── user
+    |   ├── index.js
+    |   ├── user.js
+    |   ├── user.spec.js
+    |   └── user.hbs
+    ```
+
+4. Use a `config` directory to place your configuration files
+
+    ```
+    .
+    ├── config
+    |   ├── index.js
+    |   └── server.js
+    ├── product
+    |   ├── index.js
+    |   ├── product.js
+    |   ├── product.spec.js
+    |   └── product.hbs
+    ```
+
+5. Put your long npm scripts in a `scripts` directory
+
+    ```
+    .
+    ├── scripts
+    |   ├── syncDb.sh
+    |   └── provision.sh
+    ├── product
+    |   ├── index.js
+    |   ├── product.js
+    |   ├── product.spec.js
+    |   └── product.hbs
+    ```
