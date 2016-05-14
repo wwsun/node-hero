@@ -22,6 +22,7 @@
   "homepage": "https://github.com/wwsun/node-hero#readme",
   "dependencies": {
     "express": "^4.13.4",
-    "express-handlebars": "^3.0.0"
+    "express-handlebars": "^3.0.0",
+    "request-promise": "^3.0.0"
   }
 }

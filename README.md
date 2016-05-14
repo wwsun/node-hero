@@ -133,3 +133,32 @@ finished with your job. (**no return value**)
 - [Node.js Databases Tutorial](https://blog.risingstack.com/node-js-database-tutorial/)
 - [SQL Injection attacks]()
 - [Node.js Application Security checklist](https://blog.risingstack.com/node-js-security-checklist)
+
+## Node.js Request Module
+
+1. HTTP: Hypertext Transfer Protocol. Http functions as a request-response protocol in the client-server computing model.
+2. HTTP Status Codes:
+    - 1xx - Informational
+    - 2xx - Success, our request was received and processed correctly
+        - 200 OK
+        - 201 Created
+        - 204 No Content
+    - 3xx - Redirection, the client had to do additional action to complete the request.
+        - 301 Moved Permanently
+        - 304 Not Modified 
+    - 4xx - Client Error
+        - 400 Bad Request
+        - 401 Unauthorized
+        - 403 Forbidden
+        - 404 Not Found
+        - 409 Conflict
+    - 5xx - Server Error: server failed to fulfill a valid request due to some error
+        - 500 Internal Server Error
+        - 503 Service Unavailable
+    - Find details [here](http://www.restapitutorial.com/httpstatuscodes.html)
+3. Sending requests to external APIs:
+    - Using [HTTP](https://nodejs.org/api/http.html) module in Node.js
+    - NPM: [request](https://www.npmjs.com/package/request) or [superagent](https://www.npmjs.com/package/superagent)
+    - Fetch API: [isomorphic-fetch](https://www.npmjs.com/package/isomorphic-fetch)
+    - [request-promise](https://www.npmjs.com/package/request-promise) is another option.
+    - Error handling: error-first callback, or `catch` in promise way
